@@ -76,7 +76,17 @@ for i = 1, #colours, 1 do
 
 -- wood
 
-cblocks_stairs("cblocks:wood_" .. colours[i][1], {
+
+--cblocks_stairs("cblocks:wood_" .. colours[i][1], {
+--	description = colours[i][2] .. " Wooden Planks",
+--	tiles = {"default_wood.png^[colorize:" .. colours[i][3]},
+--	paramtype = "light",
+--	is_ground_content = false,
+--	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+--	sounds = default.node_sound_wood_defaults(),
+--})
+
+minetest.register_node("cblocks:wood_" .. colours[i][1], {
 	description = colours[i][2] .. " Wooden Planks",
 	tiles = {"default_wood.png^[colorize:" .. colours[i][3]},
 	paramtype = "light",
@@ -84,6 +94,7 @@ cblocks_stairs("cblocks:wood_" .. colours[i][1], {
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
+
 
 minetest.register_craft({
 	output = "cblocks:wood_".. colours[i][1] .. " 2",
@@ -94,7 +105,16 @@ minetest.register_craft({
 
 -- stone brick
 
-cblocks_stairs("cblocks:stonebrick_" .. colours[i][1], {
+--cblocks_stairs("cblocks:stonebrick_" .. colours[i][1], {
+--	description = colours[i][2] .. " Stone Brick",
+--	tiles = {"default_stone_brick.png^[colorize:" .. colours[i][3]},
+--	paramtype = "light",
+--	is_ground_content = false,
+--	groups = {cracky = 2, stone = 1},
+--	sounds = default.node_sound_stone_defaults(),
+--})
+
+minetest.register_node("cblocks:stonebrick_" .. colours[i][1], {
 	description = colours[i][2] .. " Stone Brick",
 	tiles = {"default_stone_brick.png^[colorize:" .. colours[i][3]},
 	paramtype = "light",

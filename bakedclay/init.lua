@@ -48,40 +48,6 @@ for _, clay in pairs(clay) do
 		})
 	end
 
-	-- register stairsplus stairs if found
-	if stairsplus_mod then
-
-		stairsplus:register_all("bakedclay", "baked_clay_" .. clay[1], "bakedclay:" .. clay[1], {
-			description = clay[2] .. " Baked Clay",
-			tiles = {"baked_clay_" .. clay[1] .. ".png"},
-			groups = {cracky = 3},
-			sounds = default.node_sound_stone_defaults(),
-		})
-
-		stairsplus:register_alias_all("bakedclay", clay[1], "bakedclay", "baked_clay_" .. clay[1])
-		minetest.register_alias("stairs:slab_bakedclay_".. clay[1], "bakedclay:slab_baked_clay_" .. clay[1])
-		minetest.register_alias("stairs:stair_bakedclay_".. clay[1], "bakedclay:stair_baked_clay_" .. clay[1])
-
-	-- register all stair types for stairs redo
-	elseif stairs_mod and stairs.mod then
-
-		stairs.register_all("bakedclay_" .. clay[1], "bakedclay:" .. clay[1],
-			{cracky = 3},
-			{"baked_clay_" .. clay[1] .. ".png"},
-			clay[2] .. " Baked Clay",
-			default.node_sound_stone_defaults())
-
-	-- register stair and slab using default stairs
-	elseif stairs_mod then
-
-		stairs.register_stair_and_slab("bakedclay_".. clay[1], "bakedclay:".. clay[1],
-			{cracky = 3},
-			{"baked_clay_" .. clay[1] .. ".png"},
-			clay[2] .. " Baked Clay Stair",
-			clay[2] .. " Baked Clay Slab",
-			default.node_sound_stone_defaults())
-	end
-
 	-- register bakedclay for use in technic_cnc mod
 	if techcnc_mod then
 

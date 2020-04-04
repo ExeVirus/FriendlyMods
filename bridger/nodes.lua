@@ -71,48 +71,51 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		if minetest.get_modpath("moreblocks") then
-			stairsplus:register_all("bridger", "block_"..bridge_colors, "bridger:block_"..bridge_colors, {
-				description = bridge_desc,
-				tiles = {"bridges_"..bridge_colors..".png"},
-				groups = {cracky=3},
-				sounds = default.node_sound_metal_defaults(),
-			})
-			
-			minetest.register_alias("bridger:step_"..bridge_colors, "bridger:panel_block_"..bridge_colors)
-		elseif minetest.get_modpath("stairs") then
-			stairs.register_stair_and_slab(
-				"block_"..bridge_colors,
-				"bridger:block_"..bridge_colors,
-				{cracky=3},
-				{"bridges_"..bridge_colors..".png"},
-				bridge_desc.." Stair",
-				bridge_desc.." Slab",
-				default.node_sound_metal_defaults()
-			)
+--[[
+--		if minetest.get_modpath("moreblocks") then
+--			stairsplus:register_all("bridger", "block_"..bridge_colors, "bridger:block_"..bridge_colors, {
+--				description = bridge_desc,
+--				tiles = {"bridges_"..bridge_colors..".png"},
+--				groups = {cracky=3},
+--				sounds = default.node_sound_metal_defaults(),
+--			})
+--			
+--			minetest.register_alias("bridger:step_"..bridge_colors, "bridger:panel_block_"..bridge_colors)
+--		elseif minetest.get_modpath("stairs") then
+--			stairs.register_stair_and_slab(
+--				"block_"..bridge_colors,
+--				"bridger:block_"..bridge_colors,
+--				{cracky=3},
+--				{"bridges_"..bridge_colors..".png"},
+--				bridge_desc.." Stair",
+--				bridge_desc.." Slab",
+--				default.node_sound_metal_defaults()
+--			)
+--
+--			minetest.register_node("bridger:step_"..bridge_colors, {
+--				description = bridge_desc.." Step",
+--				drawtype = "nodebox",
+--				tiles = {"bridges_"..bridge_colors..".png"},
+--				paramtype = "light",
+--				paramtype2 = "facedir",
+--				node_box = {
+--					type = "fixed",
+--					fixed = {
+--						{-0.5, -0.5, 0, 0.5, 0, 0.5},
+--					},
+--				},
+--				groups = {cracky=3},
+--				sounds = default.node_sound_metal_defaults(),
+--				on_place = function(itemstack, placer, pointed_thing)
+--					if pointed_thing.type ~= "node" then
+--						return itemstack
+--					end
+--					return rotate_and_place(itemstack, placer, pointed_thing)
+--				end,
+--			})
+--		end
+]]
 
-			minetest.register_node("bridger:step_"..bridge_colors, {
-				description = bridge_desc.." Step",
-				drawtype = "nodebox",
-				tiles = {"bridges_"..bridge_colors..".png"},
-				paramtype = "light",
-				paramtype2 = "facedir",
-				node_box = {
-					type = "fixed",
-					fixed = {
-						{-0.5, -0.5, 0, 0.5, 0, 0.5},
-					},
-				},
-				groups = {cracky=3},
-				sounds = default.node_sound_metal_defaults(),
-				on_place = function(itemstack, placer, pointed_thing)
-					if pointed_thing.type ~= "node" then
-						return itemstack
-					end
-					return rotate_and_place(itemstack, placer, pointed_thing)
-				end,
-			})
-		end
 
 		minetest.register_node("bridger:suspension_top_"..bridge_colors, {
 			description = bridge_desc.." Cable Top",
