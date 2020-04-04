@@ -1,0 +1,1 @@
+ingots.big (Big ingots - 8 instead of 64) bool true

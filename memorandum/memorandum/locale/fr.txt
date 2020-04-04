@@ -1,0 +1,14 @@
+# Template
+
+On this piece of paper is written: " = Sur ce papier est écrit "
+" Signed by: = " Signé de:
+%s %s" Unsigned = %s %s" non signé
+Paper = Papier
+Letter = Lettre
+Eraser = Gomme
+Message in a Bottle = Message dans une bouteille
+Write a Letter = Écrire une lettre
+Done = Valider
+Sign Letter (optional) = Signer la lettre (optionnel)
+Edit Text = Éditer le texte
+Edit Signature = Éditer la signature
