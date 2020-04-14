@@ -28,7 +28,7 @@ if mobs.mod and mobs.mod == "redo" then
 		fall_speed = 0,
 		stepheight = 3,
 		fly = true,
-		water_damage = 1,
+		water_damage = 0,
 		lava_damage = 1,
 		light_damage = 0,
 		fall_damage = 0,
