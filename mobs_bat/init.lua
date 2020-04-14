@@ -33,7 +33,7 @@ if mobs.mod and mobs.mod == "redo" then
 			attack = "animal_bat",
 		},
 		fly = true,
-		water_damage = 2,
+		water_damage = 0,
 		lava_damage = 10,
 		light_damage = 0,
 		view_range = 10,
