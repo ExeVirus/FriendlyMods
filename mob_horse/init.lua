@@ -37,7 +37,7 @@ mobs:register_mob("mob_horse:horse", {
 	hp_max = 16,
 	armor = 200,
 	lava_damage = 5,
-	fall_damage = 5,
+	fall_damage = 2,
 	water_damage = 0,
 	makes_footstep_sound = true,
 	drops = {
