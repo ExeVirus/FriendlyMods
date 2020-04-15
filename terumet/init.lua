@@ -156,6 +156,7 @@ terumet.do_lua_file('machine/vulcan')
 terumet.do_lua_file('machine/thermobox')
 terumet.do_lua_file('machine/thermdist')
 terumet.do_lua_file('machine/heatray')
+terumet.do_lua_file('machine/lavam')
 
 if unified_inventory then 
     terumet.do_lua_file('interop/unified_inventory')
