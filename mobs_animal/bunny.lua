@@ -31,7 +31,7 @@ stepheight = 0.6,
 	jump_height = 6,
 	drops = {
 		{name = "mobs:rabbit_raw", chance = 1, min = 1, max = 1},
-		{name = "mobs:rabbit_hide", chance = 1, min = 1, max = 1},
+		{name = "mobs:rabbit_hide", chance = 1, min = 0, max = 1},
 	},
 	water_damage = 0,
 	lava_damage = 4,
@@ -74,6 +74,7 @@ stepheight = 0.6,
 
 			self.type = "monster"
 			self.health = 20
+			self.passive = false
 
 			return
 		end

@@ -1,7 +1,7 @@
 
 local S = mobs.intllib
 
--- Bee by KrupnoPavel
+-- Bee by KrupnoPavel (.b3d model by sirrobzeroone)
 
 mobs:register_mob("mobs_animal:bee", {
 	type = "animal",
@@ -11,20 +11,22 @@ mobs:register_mob("mobs_animal:bee", {
 	armor = 200,
 	collisionbox = {-0.2, -0.01, -0.2, 0.2, 0.5, 0.2},
 	visual = "mesh",
-	mesh = "mobs_bee.x",
+	mesh = "mobs_bee.b3d",
 	textures = {
 		{"mobs_bee.png"},
 	},
+	blood_texture = "mobs_bee_inv.png",
+	blood_amount = 1,
 	makes_footstep_sound = false,
 	sounds = {
 		random = "mobs_bee",
-	},	
+	},
 	walk_velocity = 1,
 	jump = true,
 	drops = {
 		{name = "mobs:honey", chance = 2, min = 1, max = 2},
 	},
-	water_damage = 0,
+	water_damage = 1,
 	lava_damage = 2,
 	light_damage = 0,
 	fall_damage = 0,
@@ -55,7 +57,7 @@ mobs:spawn({
 	day_toggle = true,
 })
 
-mobs:register_egg("mobs_animal:bee", S("Bee"), "mobs_bee_inv.png", 0)
+mobs:register_egg("mobs_animal:bee", S("Bee"), "mobs_bee_inv.png")
 
 -- compatibility
 mobs:alias_mob("mobs:bee", "mobs_animal:bee")
@@ -165,7 +167,7 @@ minetest.register_craft({
 -- beehive workings
 minetest.register_abm({
 	nodenames = {"mobs:beehive"},
-	interval = 6,
+	interval = 12,
 	chance = 6,
 	catch_up = false,
 	action = function(pos, node)
@@ -184,7 +186,7 @@ minetest.register_abm({
 		local honey = inv:get_stack("beehive", 1):get_count()
 
 		-- is hive full?
-		if honey > 19 then
+		if honey > 11 then
 			return
 		end
 

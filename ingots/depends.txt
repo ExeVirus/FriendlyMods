@@ -1,5 +1,0 @@
-basic_materials?
-default?
-moreores?
-technic_worldgen?
-terumet?

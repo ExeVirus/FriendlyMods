@@ -3,6 +3,14 @@
 local MP = minetest.get_modpath(minetest.get_current_modname())
 local S, NS = dofile(MP .. "/intllib.lua")
 
+
+-- 0.4.17 or 5.0 check
+local y_off = 20
+if minetest.registered_nodes["default:permafrost"] then
+	y_off = 10
+end
+
+
 -- rideable horse
 
 mobs:register_mob("mob_horse:horse", {
@@ -37,11 +45,11 @@ mobs:register_mob("mob_horse:horse", {
 	hp_max = 16,
 	armor = 200,
 	lava_damage = 5,
-	fall_damage = 2,
-	water_damage = 0,
+	fall_damage = 5,
+	water_damage = 1,
 	makes_footstep_sound = true,
 	drops = {
-		{name = "mobs:meat_raw", chance = 1, min = 2, max = 3}
+		{name = "mobs:leather", chance = 1, min = 0, max = 2}
 	},
 
 	do_custom = function(self, dtime)
@@ -53,7 +61,7 @@ mobs:register_mob("mob_horse:horse", {
 			self.max_speed_reverse = 2
 			self.accel = 6
 			self.terrain_type = 3
-			self.driver_attach_at = {x = 0, y = 20, z = -2}
+			self.driver_attach_at = {x = 0, y = y_off, z = -2}
 			self.driver_eye_offset = {x = 0, y = 3, z = 0}
 		end
 
@@ -75,6 +83,7 @@ mobs:register_mob("mob_horse:horse", {
 		if self.driver then
 			minetest.add_item(pos, "mobs:saddle")
 			mobs.detach(self.driver, {x = 1, y = 0, z = 1})
+self.saddle = nil
 		end
 
 		-- drop any horseshoes added
@@ -118,15 +127,22 @@ mobs:register_mob("mob_horse:horse", {
 					minetest.add_item(clicker:get_pos(), "mobs:saddle")
 				end
 
+self.saddle = nil
+
 			-- attach player to horse
-			elseif not self.driver
-			and clicker:get_wielded_item():get_name() == "mobs:saddle" then
+			elseif (not self.driver and not self.child
+			and clicker:get_wielded_item():get_name() == "mobs:saddle")
+			or self.saddle then
 
 				self.object:set_properties({stepheight = 1.1})
 				mobs.attach(self, clicker)
 
 				-- take saddle from inventory
-				inv:remove_item("main", "mobs:saddle")
+				if not self.saddle then
+					inv:remove_item("main", "mobs:saddle")
+				end
+
+self.saddle = true
 			end
 		end
 

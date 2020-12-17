@@ -14,7 +14,6 @@ local modpath = minetest.get_modpath(minetest.get_current_modname())
 dofile(modpath.."/config.lua") --configuration file; holds various constants
 dofile(modpath.."/crafting.lua") --crafting recipes
 dofile(modpath.."/nodes.lua") --node definitions
-dofile(modpath.."/stairsplus.lua") --node:stairsplus definitions
 dofile(modpath.."/functions.lua") --function definitions
 dofile(modpath.."/abms.lua") --abm definitions
 

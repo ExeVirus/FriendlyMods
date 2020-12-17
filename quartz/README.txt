@@ -12,10 +12,9 @@ License: MIT (see LICENSE.txt)
 Dependencies:
 default (found in minetest_game)
 stairs (found in minetest_game)
-intllib (optional, for translations)
-moreblocks or stairsplus (optional, for stairsplus support)
+moreblocks (optional, for stairsplus support)
 
-Please report bugs at the GitHub issue tracker:
+Please report bugs at the github issue tracker:
 https://github.com/minetest-mods/quartz/issues/
 
 Crafting:
@@ -81,6 +80,3 @@ x|x|x
 x|c|x
 -----
 x|x|x
-
-If you have stairsplus (or moreblocks) installed, you will be able to use
-circular saws to cut quartz blocks.

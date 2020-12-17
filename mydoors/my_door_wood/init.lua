@@ -11,7 +11,6 @@ local function my_door_wood_block_stairs(nodename, def)
 	local mod = string.match (nodename,"(.+):")
 	local name = string.match (nodename,":(.+)")
 	minetest.register_node(nodename,def)
-    --[[
 	if minetest.get_modpath("moreblocks") then
 		stairsplus:register_all(
 			mod,
@@ -33,8 +32,6 @@ local function my_door_wood_block_stairs(nodename, def)
 			def.sounds
 		)	
 	end	
-    ]]
-
 end
 for i in ipairs(door_wood) do
 	local color = door_wood[i][1]
